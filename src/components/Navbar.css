@@ -146,48 +146,59 @@
   align-items: center;
 }
 
-/* Nav Link Styling */
+/* Nav Link Styling — Clean Text with Yellow Glow & Scale */
 .navbar-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  border-radius: var(--radius-full);
-  color: rgba(240, 244, 255, 0.75);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: rgba(240, 244, 255, 0.85);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-family: var(--font-body);
-  transition: all 0.25s ease;
-  background: transparent;
-  border: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.25s ease;
   cursor: pointer;
   line-height: 1.4;
   white-space: nowrap;
+  transform-origin: center center;
 }
 
 .navbar-link:hover,
+.navbar-link:focus,
 .navbar-link.active {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.navbar-link.active {
-  color: var(--color-accent);
+  color: #F5A623 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: scale(1.08);
+  text-shadow: 0 0 12px rgba(245, 166, 35, 0.75), 0 0 24px rgba(245, 166, 35, 0.35);
   font-weight: 600;
-  background: rgba(245, 166, 35, 0.12);
-  border: 1px solid rgba(245, 166, 35, 0.2);
 }
 
 .chevron {
-  transition: transform 0.25s ease;
-  opacity: 0.7;
+  transition: transform 0.25s ease, color 0.25s ease, filter 0.25s ease;
+  opacity: 0.8;
+}
+
+.navbar-link:hover .chevron,
+.navbar-link.active .chevron {
+  color: #F5A623;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
 }
 
 .chevron.open {
   transform: rotate(180deg);
-  color: var(--color-accent);
+  color: #F5A623;
   opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
 }
 
 /* Dropdown Menu Box */

@@ -92,7 +92,7 @@ export default function Navbar() {
         <div className="container navbar-topbar-inner">
           <div className="navbar-topbar-item">
             <MapPin size={13} className="topbar-icon" />
-            <span>Othakkal Mandapam, Coimbatore 641 032</span>
+            <span>Othakkal Mandapam, Coimbatore 641-032</span>
           </div>
           <div className="navbar-topbar-right">
             <a href="tel:+919791611143" className="topbar-link">

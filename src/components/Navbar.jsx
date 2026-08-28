@@ -113,7 +113,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="navbar-logo">
             <div className="navbar-logo-icon">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <svg width="100%" height="100%" viewBox="0 0 36 36" fill="none">
                 <rect width="36" height="36" rx="10" fill="url(#nLogoGrad)" />
                 <path d="M18 7L29 27H7L18 7Z" fill="rgba(255,255,255,0.92)" />
                 <circle cx="18" cy="19.5" r="4.5" fill="url(#nLogoGrad2)" />
@@ -218,19 +218,33 @@ export default function Navbar() {
 
                 return (
                   <div key={item.label} className="navbar-mobile-item">
-                    <div className="navbar-mobile-header">
-                      <NavLink
-                        to={item.path}
-                        className="navbar-mobile-link"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {item.label}
-                      </NavLink>
+                    <div
+                      className="navbar-mobile-header"
+                      onClick={(e) => {
+                        if (hasChildren) {
+                          e.preventDefault();
+                          toggleMobileSub(item.label, e);
+                        }
+                      }}
+                    >
+                      {hasChildren ? (
+                        <div className="navbar-mobile-link-text">
+                          {item.label}
+                        </div>
+                      ) : (
+                        <NavLink
+                          to={item.path}
+                          className="navbar-mobile-link"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </NavLink>
+                      )}
 
                       {hasChildren && (
                         <button
+                          type="button"
                           className={`navbar-mobile-toggle ${isExpanded ? 'expanded' : ''}`}
-                          onClick={(e) => toggleMobileSub(item.label, e)}
                           aria-label={`Toggle ${item.label} sub-menu`}
                         >
                           <ChevronDown size={18} />
@@ -248,6 +262,7 @@ export default function Navbar() {
                             onClick={() => setMobileOpen(false)}
                           >
                             <span className="sublink-title">{child.label}</span>
+                            <ArrowRight size={13} className="mobile-sublink-arrow" />
                           </NavLink>
                         ))}
                       </div>

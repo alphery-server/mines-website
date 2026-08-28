@@ -9,39 +9,39 @@ const navItems = [
     label: 'About',
     path: '/about',
     children: [
-      { label: 'About Us', path: '/about', desc: 'Our journey, vision & values' },
-      { label: 'Vision & Mission', path: '/about#vision', desc: 'Sustainable mining commitments' },
-      { label: 'Leadership', path: '/about#leadership', desc: 'Meet our executive team' },
+      { label: 'About Us', path: '/about' },
+      { label: 'Vision & Mission', path: '/about#vision' },
+      { label: 'Leadership', path: '/about#leadership' },
     ],
   },
   {
     label: 'Products',
     path: '/products',
     children: [
-      { label: 'All Products', path: '/products', desc: 'Explore all aggregate solutions' },
-      { label: 'M-Sand', path: '/products/m-sand', desc: 'Engineered sand for concrete' },
-      { label: 'P-Sand', path: '/products/p-sand', desc: 'Ultra-fine plastering sand' },
-      { label: 'Limestone', path: '/products/limestone', desc: 'High purity industrial stone' },
+      { label: 'All Products', path: '/products' },
+      { label: 'M-Sand', path: '/products/m-sand' },
+      { label: 'P-Sand', path: '/products/p-sand' },
+      { label: 'Limestone', path: '/products/limestone' },
     ],
   },
   {
     label: 'Operations',
     path: '/operations',
     children: [
-      { label: 'Mining & Operations', path: '/operations', desc: 'Quarrying & modern crushing' },
-      { label: 'Quality & Technology', path: '/quality', desc: 'Lab testing & quality control' },
-      { label: 'Logistics & Supply', path: '/logistics', desc: 'Reliable fleet delivery network' },
+      { label: 'Mining & Operations', path: '/operations' },
+      { label: 'Quality & Technology', path: '/quality' },
+      { label: 'Logistics & Supply', path: '/logistics' },
     ],
   },
   {
     label: 'Company',
     path: '/sustainability',
     children: [
-      { label: 'Sustainability', path: '/sustainability', desc: 'Green mining practices' },
-      { label: 'Global Presence', path: '/global-presence', desc: 'Regional & global reach' },
-      { label: 'Industries', path: '/industries', desc: 'Commercial & heavy infra' },
-      { label: 'Projects', path: '/projects', desc: 'Key infrastructure showcase' },
-      { label: 'Certifications', path: '/certifications', desc: 'ISO certified quality standards' },
+      { label: 'Sustainability', path: '/sustainability' },
+      { label: 'Global Presence', path: '/global-presence' },
+      { label: 'Industries', path: '/industries' },
+      { label: 'Projects', path: '/projects' },
+      { label: 'Certifications', path: '/certifications' },
     ],
   },
   { label: 'News', path: '/news' },
@@ -170,15 +170,10 @@ export default function Navbar() {
                               className="navbar-dropdown-item"
                               onClick={() => setActiveDropdown(null)}
                             >
-                              <div className="navbar-dropdown-content">
-                                <span className="navbar-dropdown-title">
-                                  {child.label}
-                                  <ArrowRight size={12} className="dropdown-arrow" />
-                                </span>
-                                {child.desc && (
-                                  <span className="navbar-dropdown-desc">{child.desc}</span>
-                                )}
-                              </div>
+                              <span className="navbar-dropdown-title">
+                                {child.label}
+                                <ArrowRight size={12} className="dropdown-arrow" />
+                              </span>
                             </NavLink>
                           ))}
                         </div>
@@ -253,9 +248,6 @@ export default function Navbar() {
                             onClick={() => setMobileOpen(false)}
                           >
                             <span className="sublink-title">{child.label}</span>
-                            {child.desc && (
-                              <span className="sublink-desc">{child.desc}</span>
-                            )}
                           </NavLink>
                         ))}
                       </div>

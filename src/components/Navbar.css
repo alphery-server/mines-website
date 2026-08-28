@@ -298,8 +298,9 @@
 }
 
 .navbar-cta {
-  padding: 9px 22px;
+  padding: 10px 22px;
   font-size: 0.88rem;
+  border-radius: 12px;
 }
 
 /* Hamburger button */

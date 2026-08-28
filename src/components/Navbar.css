@@ -175,12 +175,12 @@
 .navbar-link:hover,
 .navbar-link:focus,
 .navbar-link.active {
-  color: #F5A623 !important;
+  color: #E5C378 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   transform: scale(1.08);
-  text-shadow: 0 0 12px rgba(245, 166, 35, 0.75), 0 0 24px rgba(245, 166, 35, 0.35);
+  text-shadow: 0 0 12px rgba(229, 195, 120, 0.75), 0 0 24px rgba(212, 175, 55, 0.35);
   font-weight: 600;
 }
 
@@ -191,16 +191,16 @@
 
 .navbar-link:hover .chevron,
 .navbar-link.active .chevron {
-  color: #F5A623;
+  color: #E5C378;
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
+  filter: drop-shadow(0 0 6px rgba(229, 195, 120, 0.8));
 }
 
 .chevron.open {
   transform: rotate(180deg);
-  color: #F5A623;
+  color: #E5C378;
   opacity: 1;
-  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
+  filter: drop-shadow(0 0 6px rgba(229, 195, 120, 0.8));
 }
 
 /* Dropdown Menu Box — Darkish Blue Glassmorphism matching Navbar */
@@ -273,14 +273,14 @@
 .navbar-dropdown-item:hover .dropdown-arrow {
   opacity: 1;
   transform: translateX(4px);
-  color: #F5A623;
-  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
+  color: #E5C378;
+  filter: drop-shadow(0 0 6px rgba(229, 195, 120, 0.8));
 }
 
 .navbar-dropdown-item:hover .navbar-dropdown-title {
-  color: #F5A623;
+  color: #E5C378;
   transform: translateX(4px);
-  text-shadow: 0 0 10px rgba(245, 166, 35, 0.6);
+  text-shadow: 0 0 10px rgba(229, 195, 120, 0.6);
 }
 
 .navbar-dropdown-title {
@@ -331,11 +331,11 @@
 
 .navbar-hamburger:hover,
 .navbar-hamburger:active {
-  color: #F5A623;
+  color: #E5C378;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.8));
+  filter: drop-shadow(0 0 8px rgba(229, 195, 120, 0.8));
   transform: scale(1.08);
 }
 
@@ -403,8 +403,8 @@
 .navbar-mobile-header:hover .navbar-mobile-toggle,
 .navbar-mobile-link:hover,
 .navbar-mobile-link.active {
-  color: #F5A623;
-  text-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+  color: #E5C378;
+  text-shadow: 0 0 10px rgba(229, 195, 120, 0.5);
 }
 
 .navbar-mobile-toggle {
@@ -426,7 +426,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-left: 2px solid rgba(245, 166, 35, 0.25);
+  border-left: 2px solid rgba(229, 195, 120, 0.25);
   margin-left: 10px;
   margin-top: 4px;
 }
@@ -452,16 +452,16 @@
 
 .navbar-mobile-sublink:hover .sublink-title,
 .navbar-mobile-sublink.active .sublink-title {
-  color: #F5A623;
-  text-shadow: 0 0 10px rgba(245, 166, 35, 0.6);
+  color: #E5C378;
+  text-shadow: 0 0 10px rgba(229, 195, 120, 0.6);
 }
 
 .navbar-mobile-sublink:hover .mobile-sublink-arrow,
 .navbar-mobile-sublink.active .mobile-sublink-arrow {
   opacity: 1;
-  color: #F5A623;
+  color: #E5C378;
   transform: translateX(3px);
-  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.8));
+  filter: drop-shadow(0 0 6px rgba(229, 195, 120, 0.8));
 }
 
 .sublink-title {

@@ -13,13 +13,16 @@
   --color-surface-2:    #1A2235;
   --color-surface-3:    #1F2940;
 
-  /* Accent — Electric Amber/Gold */
-  --color-accent:       #F5A623;
-  --color-accent-glow:  rgba(245, 166, 35, 0.35);
-  --color-accent-dim:   rgba(245, 166, 35, 0.12);
-  --color-accent-2:     #FF6B35;
-  --color-teal:         #00D4AA;
-  --color-teal-dim:     rgba(0, 212, 170, 0.12);
+  /* Accent — Dual Tone Champagne & Metallic Gold (Matching Brand Logo) */
+  --color-accent:       #E5C378;
+  --color-accent-light: #F7E7C4;
+  --color-accent-mid:   #D4AF37;
+  --color-accent-dark:  #9A7B1C;
+  --color-accent-glow:  rgba(212, 175, 55, 0.35);
+  --color-accent-dim:   rgba(229, 195, 120, 0.12);
+  --color-accent-2:     #C59B27;
+  --color-teal:         #E5C378;
+  --color-teal-dim:     rgba(229, 195, 120, 0.12);
 
   /* Text */
   --color-text:         #F0F4FF;
@@ -30,7 +33,7 @@
   /* Borders */
   --color-border:       rgba(255, 255, 255, 0.07);
   --color-border-bright: rgba(255, 255, 255, 0.14);
-  --color-border-accent: rgba(245, 166, 35, 0.25);
+  --color-border-accent: rgba(229, 195, 120, 0.3);
 
   /* Glass */
   --glass-bg:           rgba(255, 255, 255, 0.04);
@@ -44,9 +47,9 @@
   /* Gradients */
   --gradient-hero:      linear-gradient(135deg, rgba(8,11,20,0.95) 0%, rgba(12,16,32,0.85) 100%);
   --gradient-card:      linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-  --gradient-accent:    linear-gradient(135deg, #F5A623 0%, #FF6B35 100%);
-  --gradient-accent-glow: linear-gradient(135deg, rgba(245,166,35,0.2) 0%, rgba(255,107,53,0.1) 100%);
-  --gradient-teal:      linear-gradient(135deg, #00D4AA 0%, #0099CC 100%);
+  --gradient-accent:    linear-gradient(180deg, #F7E7C4 0%, #E5C378 45%, #C59B27 85%, #9A7B1C 100%);
+  --gradient-accent-glow: linear-gradient(135deg, rgba(247,231,196,0.25) 0%, rgba(154,123,28,0.12) 100%);
+  --gradient-teal:      linear-gradient(135deg, #F7E7C4 0%, #9A7B1C 100%);
   --gradient-surface:   linear-gradient(135deg, #131827 0%, #1A2235 100%);
   --gradient-radial:    radial-gradient(ellipse at top, #1A2235 0%, #080B14 60%);
 
@@ -198,36 +201,37 @@ p {
   transform: translateX(4px);
 }
 
-/* Primary Button — Gold/Amber Metallic Shimmer */
+/* Primary Button — Dual-Tone Champagne & Metallic Gold */
 .btn-primary {
-  background: linear-gradient(180deg, #FFBD3A 0%, #F59E0B 52%, #D97706 100%);
-  color: #0E0700;
-  border: 1px solid rgba(255, 235, 175, 0.45);
+  background: linear-gradient(180deg, #F7E7C4 0%, #E5C378 45%, #C59B27 85%, #9A7B1C 100%);
+  color: #140E03;
+  border: 1px solid rgba(255, 245, 215, 0.65);
   box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
-    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2),
-    0 4px 20px -2px rgba(245, 158, 11, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.3),
+    0 4px 20px -2px rgba(212, 175, 55, 0.45),
     0 2px 8px rgba(0, 0, 0, 0.4);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 600;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.015);
-  background: linear-gradient(180deg, #FFC854 0%, #FFA81A 52%, #E68209 100%);
-  border-color: rgba(255, 245, 200, 0.7);
+  background: linear-gradient(180deg, #FFF0CF 0%, #EFCB7F 45%, #D4A731 85%, #AA8721 100%);
+  border-color: rgba(255, 255, 255, 0.85);
   box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
-    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.1),
-    0 10px 32px -2px rgba(245, 158, 11, 0.75),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2),
+    0 10px 32px -2px rgba(212, 175, 55, 0.7),
     0 4px 12px rgba(0, 0, 0, 0.5);
-  color: #000000;
+  color: #050401;
 }
 
 .btn-primary:active {
   transform: translateY(0) scale(0.985);
   box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.25),
-    0 2px 10px rgba(245, 158, 11, 0.4);
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 2px 10px rgba(212, 175, 55, 0.3);
 }
 
 /* Secondary Button — Frosted Dark Glass */

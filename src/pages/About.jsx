@@ -10,7 +10,7 @@ export default function About() {
         <div className="container">
           <div className="section-label" style={{ justifyContent: 'center' }}><Award size={13} /> About Us</div>
           <h1>Our Story, Our Mission</h1>
-          <p>A growing force in India's mineral supply industry — built on quality, trust, and responsible mining.</p>
+          <p>A trusted force in India's mineral supply industry since 2001 — built on quality, trust, and responsible mining.</p>
         </div>
       </section>
 
@@ -21,11 +21,11 @@ export default function About() {
             <div className="section-label"><Award size={13} /> Company Overview</div>
             <h2>Vasantharagam Mines & Minerals</h2>
             <div className="divider divider-left" />
-            <p>Vasantharagam Mines & Minerals was established with a singular vision: to become the most trusted source of high-quality construction minerals in India. Headquartered in Coimbatore, Tamil Nadu, we have grown steadily over the last 5+ years into a reliable mineral supplier serving contractors, builders, and industrial clients.</p>
+            <p>Vasantharagam Mines & Minerals was established in 2001 with a singular vision: to become the most trusted source of high-quality construction minerals in India. Headquartered in Coimbatore, Tamil Nadu, we have grown steadily over the last 25+ years into a reliable mineral supplier serving contractors, builders, and industrial clients.</p>
             <p style={{ marginTop: '16px' }}>Our operations span mineral extraction, crushing, screening, quality testing, and delivery — all managed in-house to ensure consistency and reliability. We currently supply three core products: M-Sand, P-Sand, and Limestone, sourced from our licensed quarry sites in Tamil Nadu.</p>
             <div className="about-ov-highlights">
               {[
-                { label: 'Established', value: '2019' },
+                { label: 'Established', value: '2001' },
                 { label: 'Headquarters', value: 'Coimbatore, TN' },
                 { label: 'Core Products', value: '3 Product Lines' },
                 { label: 'Markets', value: 'Pan-India' },
@@ -53,12 +53,12 @@ export default function About() {
           </div>
           <div className="timeline">
             {[
-              { year: '2019', title: 'Company Founded', desc: 'Vasantharagam Mines & Minerals was established in Coimbatore, Tamil Nadu, with the aim of supplying quality minerals to the local construction industry.' },
-              { year: '2020', title: 'First Quarry Operations', desc: 'Launched our first active quarry operations for M-Sand production, meeting growing demand from local builders and contractors.' },
-              { year: '2021', title: 'P-Sand Product Launch', desc: 'Expanded our product portfolio by adding P-Sand (Plastering Sand) — designed for fine finishing in residential and commercial projects.' },
-              { year: '2022', title: 'Limestone Mining', desc: 'Entered the limestone minerals segment, supplying to cement manufacturers, industrial processors, and agricultural users.' },
-              { year: '2023', title: 'Capacity Expansion', desc: 'Upgraded crushing and screening equipment, significantly increasing production capacity to 50,000+ MT per year.' },
-              { year: '2024+', title: 'Pan-India Growth', desc: 'Expanding supply reach across Tamil Nadu and neighboring states, with focus on bulk supply partnerships and long-term B2B contracts.' },
+              { year: '2001', title: 'Company Founded', desc: 'Vasantharagam Mines & Minerals was established in Coimbatore, Tamil Nadu, dedicated to supplying high-grade construction minerals to local builders and contractors.' },
+              { year: '2008', title: 'Operations Expansion', desc: 'Expanded quarry processing facilities to scale production for commercial construction and infrastructure projects across Tamil Nadu.' },
+              { year: '2015', title: 'P-Sand Product Launch', desc: 'Expanded our product portfolio by adding specialized P-Sand (Plastering Sand) — designed for fine interior and exterior finishing.' },
+              { year: '2019', title: 'Limestone Mining Entry', desc: 'Entered the limestone minerals segment, supplying high-purity mineral reserves to cement manufacturers, industrial processors, and agricultural users.' },
+              { year: '2022', title: 'Capacity & Tech Upgrade', desc: 'Upgraded crushing, VSI processing, and automated screening equipment, significantly scaling production capacity beyond 50,000+ MT per year.' },
+              { year: '2025+', title: '25+ Years of Legacy', desc: 'Continuing over two decades of excellence, expanding supply reach across South India with focus on bulk supply partnerships and eco-friendly practices.' },
             ].map((item, i) => (
               <div key={i} className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
                 <div className="timeline-content">
@@ -140,13 +140,14 @@ export default function About() {
           </div>
           <div className="leadership-grid">
             {[
-              { name: 'Mr. Vasantha Kumar', role: 'Founder & Chairman', bio: 'A visionary entrepreneur with deep roots in the minerals industry, Mr. Vasantha Kumar founded the company with a mission to bring quality and transparency to the mineral supply chain. He oversees strategic direction and long-term growth.' },
-              { name: 'Operations Head', role: 'Head of Mining & Operations', bio: 'Overseeing all quarry and mining operations, this leader ensures that production quality and environmental compliance are maintained at the highest level across all sites.' },
-              { name: 'Commercial Head', role: 'Sales & Customer Relations', bio: 'Driving growth through strong client relationships, competitive pricing, and reliable supply commitments. Manages all B2B partnerships and large-scale project supplies.' },
+              { name: 'S. Ramesh', role: 'Founder & Director', initials: 'SR', bio: 'Visionary co-founder driving strategic direction, business growth, and long-term corporate governance for Vasantharagam Mines & Minerals.' },
+              { name: 'S. Viswanathan', role: 'Founder & Director', initials: 'SV', bio: 'Co-founder instrumental in establishing core operational foundations, quality benchmarks, and guiding sustainable business development.' },
+              { name: 'S. R. Dharanidharan', role: 'CEO', initials: 'SD', bio: 'Chief Executive Officer leading strategic expansion, commercial growth, B2B partnerships, and overall corporate execution across India.' },
+              { name: 'S. R. Dhayal', role: 'COO / Head of Operations', initials: 'SD', bio: 'Chief Operating Officer managing end-to-end quarry extraction, advanced crushing technology, quality assurance, and fleet logistics.' },
             ].map((leader, i) => (
               <div key={i} className="leader-card">
                 <div className="leader-avatar">
-                  <span>{leader.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
+                  <span>{leader.initials || leader.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
                 </div>
                 <div className="leader-info">
                   <h4>{leader.name}</h4>

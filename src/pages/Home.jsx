@@ -82,7 +82,7 @@ export default function Home() {
         <div className="hero-orb-2" />
         <div className={`container hero-content ${heroLoaded ? 'hero-loaded' : ''}`}>
           <div className="hero-badge">
-            <Award size={13} /> Trusted Mineral Supplier · Est. in Tamil Nadu
+            <Award size={13} /> Trusted Mineral Supplier · Established 2001
           </div>
           <h1 className="hero-title">
             Your Trusted Source<br />
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="hero-stat-num"><Counter end={5} suffix="+" /></span>
+              <span className="hero-stat-num"><Counter end={25} suffix="+" /></span>
               <span className="hero-stat-label">Years Experience</span>
             </div>
             <div className="hero-stat-divider" />
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="container">
           <div className="highlights-grid">
             {[
-              { icon: <Clock size={28} />, value: 5, suffix: '+', label: 'Years of Experience', desc: 'In mineral extraction & supply' },
+              { icon: <Clock size={28} />, value: 25, suffix: '+', label: 'Years of Experience', desc: 'In mineral extraction & supply since 2001' },
               { icon: <Factory size={28} />, value: 2, suffix: '', label: 'Production Sites', desc: 'Active mining quarry operations' },
               { icon: <Package size={28} />, value: 3, suffix: '', label: 'Core Products', desc: 'M-Sand, P-Sand & Limestone' },
               { icon: <Users size={28} />, value: 200, suffix: '+', label: 'Customers Served', desc: 'Builders, contractors & projects' },
@@ -169,7 +169,7 @@ export default function Home() {
             <div className="divider divider-left" />
             <p>
               Vasantharagam Mines & Minerals is a trusted name in the mineral supply industry,
-              headquartered in Coimbatore, Tamil Nadu. With 5+ years of experience in responsible
+              headquartered in Coimbatore, Tamil Nadu. Established in 2001, with 25+ years of experience in responsible
               mineral extraction and processing, we supply high-quality M-Sand, P-Sand, and Limestone
               to builders, contractors, and industrial projects across India.
             </p>
@@ -304,7 +304,7 @@ export default function Home() {
                   { icon: <TrendingUp size={20} />, title: 'Large Production Capacity', desc: '50,000+ MT annual capacity with scalable output.' },
                   { icon: <Truck size={20} />, title: 'On-Time Delivery', desc: 'Dedicated logistics for reliable, punctual delivery.' },
                   { icon: <CheckCircle size={20} />, title: 'Competitive Pricing', desc: 'Direct-from-source pricing — no middlemen.' },
-                  { icon: <Award size={20} />, title: 'Expert Team', desc: '5+ years of minerals expertise guiding every order.' },
+                  { icon: <Award size={20} />, title: 'Expert Team', desc: '25+ years of minerals expertise guiding every order.' },
                   { icon: <Leaf size={20} />, title: 'Responsible Sourcing', desc: 'Licensed, compliant, and eco-conscious operations.' },
                 ].map((pt, i) => (
                   <div key={i} className="why-point">
@@ -320,7 +320,7 @@ export default function Home() {
             <FadeIn delay={200} className="why-visual">
               <img src="/mining_hero.png" alt="Mining operations" className="why-img" />
               <div className="why-exp-badge">
-                <span className="why-exp-num">5+</span>
+                <span className="why-exp-num">25+</span>
                 <span className="why-exp-label">Years of<br />Excellence</span>
               </div>
             </FadeIn>
@@ -343,9 +343,7 @@ export default function Home() {
               { icon: '🛣️', name: 'Infrastructure', desc: 'Roads, bridges and highways' },
               { icon: '🏭', name: 'Cement', desc: 'Raw materials for cement production' },
               { icon: '⚙️', name: 'Manufacturing', desc: 'Industrial mineral applications' },
-              { icon: '🔩', name: 'Steel', desc: 'Limestone for steel manufacturing' },
               { icon: '⚡', name: 'Energy', desc: 'Industrial and utility projects' },
-              { icon: '🌾', name: 'Agriculture', desc: 'Soil amendment applications' },
               { icon: '🏘️', name: 'Real Estate', desc: 'Large-scale housing projects' },
             ].map((ind, i) => (
               <FadeIn key={i} delay={i * 60} className="industry-card">

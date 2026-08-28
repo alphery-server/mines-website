@@ -14,7 +14,6 @@ import Sustainability from './pages/Sustainability';
 import Industries from './pages/Industries';
 import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
-import News from './pages/News';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 
@@ -55,7 +54,6 @@ function Layout() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/certifications" element={<Certifications />} />
-        <Route path="/news" element={<News />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

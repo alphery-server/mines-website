@@ -25,7 +25,6 @@ const footerLinks = {
   resources: [
     { label: 'Industries We Serve', path: '/industries' },
     { label: 'Projects', path: '/projects' },
-    { label: 'News & Insights', path: '/news' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact Us', path: '/contact' },
   ],
@@ -44,11 +43,11 @@ export default function Footer() {
               <img src="/noroot.png" alt="Vasantharagam Mines & Minerals Logo" className="footer-logo-img" />
               <div>
                 <div className="footer-logo-name">Vasantharagam</div>
-                <div className="footer-logo-sub">Mines & Minerals</div>
+                <div className="footer-logo-sub">Mines & Minerals · Est. 2001</div>
               </div>
             </div>
             <p className="footer-desc">
-              Your Trusted Source for Quality Minerals. Supplying premium M-Sand, P-Sand, and Limestone for construction, infrastructure, and industrial applications across India.
+              Your Trusted Source for Quality Minerals Since 2001. Supplying premium M-Sand, P-Sand, and Limestone for construction, infrastructure, and industrial applications across India.
             </p>
             <div className="footer-contact-info">
               <a href="tel:+919791611143" className="footer-contact-item">

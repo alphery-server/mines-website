@@ -74,15 +74,17 @@ export default function Contact() {
                 <div className="contact-card-icon" style={{ background: item.color }}>
                   {item.icon}
                 </div>
-                <h4 className="contact-card-title">{item.title}</h4>
-                {item.lines.map((line, j) => (
-                  <p key={j} className="contact-card-line">{line}</p>
-                ))}
-                {item.action && (
-                  <a href={item.action} target={item.action.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="contact-card-action">
-                    {item.actionLabel} →
-                  </a>
-                )}
+                <div className="contact-card-content">
+                  <h4 className="contact-card-title">{item.title}</h4>
+                  {item.lines.map((line, j) => (
+                    <p key={j} className="contact-card-line">{line}</p>
+                  ))}
+                  {item.action && (
+                    <a href={item.action} target={item.action.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="contact-card-action">
+                      {item.actionLabel} →
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>

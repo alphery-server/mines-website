@@ -44,7 +44,6 @@ const navItems = [
       { label: 'Certifications', path: '/certifications' },
     ],
   },
-  { label: 'News', path: '/news' },
   { label: 'Contact', path: '/contact' },
 ];
 

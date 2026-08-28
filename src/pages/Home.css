@@ -76,7 +76,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 120px 24px 80px;
+  padding: 210px 24px 80px;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 1s ease, transform 1s ease;

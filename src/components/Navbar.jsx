@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import './Navbar.css';
 
 const navItems = [
@@ -9,39 +9,39 @@ const navItems = [
     label: 'About',
     path: '/about',
     children: [
-      { label: 'About Us', path: '/about' },
-      { label: 'Vision & Mission', path: '/about#vision' },
-      { label: 'Leadership', path: '/about#leadership' },
+      { label: 'About Us', path: '/about', desc: 'Our journey, vision & values' },
+      { label: 'Vision & Mission', path: '/about#vision', desc: 'Sustainable mining commitments' },
+      { label: 'Leadership', path: '/about#leadership', desc: 'Meet our executive team' },
     ],
   },
   {
     label: 'Products',
     path: '/products',
     children: [
-      { label: 'All Products', path: '/products' },
-      { label: 'M-Sand', path: '/products/m-sand' },
-      { label: 'P-Sand', path: '/products/p-sand' },
-      { label: 'Limestone', path: '/products/limestone' },
+      { label: 'All Products', path: '/products', desc: 'Explore all aggregate solutions' },
+      { label: 'M-Sand', path: '/products/m-sand', desc: 'Engineered sand for concrete' },
+      { label: 'P-Sand', path: '/products/p-sand', desc: 'Ultra-fine plastering sand' },
+      { label: 'Limestone', path: '/products/limestone', desc: 'High purity industrial stone' },
     ],
   },
   {
     label: 'Operations',
     path: '/operations',
     children: [
-      { label: 'Mining & Operations', path: '/operations' },
-      { label: 'Quality & Technology', path: '/quality' },
-      { label: 'Logistics & Supply', path: '/logistics' },
+      { label: 'Mining & Operations', path: '/operations', desc: 'Quarrying & modern crushing' },
+      { label: 'Quality & Technology', path: '/quality', desc: 'Lab testing & quality control' },
+      { label: 'Logistics & Supply', path: '/logistics', desc: 'Reliable fleet delivery network' },
     ],
   },
   {
     label: 'Company',
     path: '/sustainability',
     children: [
-      { label: 'Sustainability', path: '/sustainability' },
-      { label: 'Global Presence', path: '/global-presence' },
-      { label: 'Industries', path: '/industries' },
-      { label: 'Projects', path: '/projects' },
-      { label: 'Certifications', path: '/certifications' },
+      { label: 'Sustainability', path: '/sustainability', desc: 'Green mining practices' },
+      { label: 'Global Presence', path: '/global-presence', desc: 'Regional & global reach' },
+      { label: 'Industries', path: '/industries', desc: 'Commercial & heavy infra' },
+      { label: 'Projects', path: '/projects', desc: 'Key infrastructure showcase' },
+      { label: 'Certifications', path: '/certifications', desc: 'ISO certified quality standards' },
     ],
   },
   { label: 'News', path: '/news' },
@@ -52,11 +52,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [expandedMobile, setExpandedMobile] = useState({});
   const location = useLocation();
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -76,15 +77,32 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const toggleMobileSub = (label, e) => {
+    e.stopPropagation();
+    setExpandedMobile((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
+
   return (
-    <>
+    <header className="navbar-wrapper">
       {/* Top bar */}
       <div className="navbar-topbar">
         <div className="container navbar-topbar-inner">
-          <span>📍 Othakkal Mandapam, Coimbatore 641 032</span>
+          <div className="navbar-topbar-item">
+            <MapPin size={13} className="topbar-icon" />
+            <span>Othakkal Mandapam, Coimbatore 641 032</span>
+          </div>
           <div className="navbar-topbar-right">
-            <a href="tel:+919791611143"><Phone size={13} /> 97916 11143</a>
-            <a href="mailto:info@vasantharagammines.in">info@vasantharagammines.in</a>
+            <a href="tel:+919791611143" className="topbar-link">
+              <Phone size={13} />
+              <span>97916 11143</span>
+            </a>
+            <a href="mailto:info@vasantharagammines.in" className="topbar-link">
+              <Mail size={13} />
+              <span>info@vasantharagammines.in</span>
+            </a>
           </div>
         </div>
       </div>
@@ -96,9 +114,9 @@ export default function Navbar() {
           <Link to="/" className="navbar-logo">
             <div className="navbar-logo-icon">
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="8" fill="url(#nLogoGrad)" />
-                <path d="M18 6L30 28H6L18 6Z" fill="rgba(255,255,255,0.9)" />
-                <circle cx="18" cy="20" r="5" fill="url(#nLogoGrad2)" />
+                <rect width="36" height="36" rx="10" fill="url(#nLogoGrad)" />
+                <path d="M18 7L29 27H7L18 7Z" fill="rgba(255,255,255,0.92)" />
+                <circle cx="18" cy="19.5" r="4.5" fill="url(#nLogoGrad2)" />
                 <defs>
                   <linearGradient id="nLogoGrad" x1="0" y1="0" x2="36" y2="36">
                     <stop offset="0%" stopColor="#F5A623" />
@@ -119,73 +137,146 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <ul className="navbar-links">
-            {navItems.map((item) => (
-              <li key={item.label} className="navbar-item">
-                {item.children ? (
-                  <>
-                    <button
-                      className={`navbar-link navbar-dropdown-trigger ${activeDropdown === item.label ? 'active' : ''}`}
-                      onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
-                      onMouseEnter={() => setActiveDropdown(item.label)}
-                    >
-                      {item.label}
-                      <ChevronDown size={14} className={`chevron ${activeDropdown === item.label ? 'open' : ''}`} />
-                    </button>
-                    {activeDropdown === item.label && (
-                      <div className="navbar-dropdown" onMouseLeave={() => setActiveDropdown(null)}>
-                        {item.children.map((child) => (
-                          <NavLink key={child.path} to={child.path} className="navbar-dropdown-item">
-                            {child.label}
-                          </NavLink>
-                        ))}
+            {navItems.map((item) => {
+              const hasChildren = Boolean(item.children);
+              const isOpen = activeDropdown === item.label;
+
+              return (
+                <li
+                  key={item.label}
+                  className={`navbar-item ${hasChildren ? 'has-dropdown' : ''}`}
+                  onMouseEnter={() => hasChildren && setActiveDropdown(item.label)}
+                  onMouseLeave={() => hasChildren && setActiveDropdown(null)}
+                >
+                  {hasChildren ? (
+                    <div className="navbar-dropdown-wrapper">
+                      <NavLink
+                        to={item.path}
+                        className={({ isActive }) =>
+                          `navbar-link navbar-dropdown-trigger ${isActive || isOpen ? 'active' : ''}`
+                        }
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown size={14} className={`chevron ${isOpen ? 'open' : ''}`} />
+                      </NavLink>
+
+                      <div className={`navbar-dropdown ${isOpen ? 'show' : ''}`}>
+                        <div className="navbar-dropdown-inner">
+                          {item.children.map((child) => (
+                            <NavLink
+                              key={child.path}
+                              to={child.path}
+                              className="navbar-dropdown-item"
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              <div className="navbar-dropdown-content">
+                                <span className="navbar-dropdown-title">
+                                  {child.label}
+                                  <ArrowRight size={12} className="dropdown-arrow" />
+                                </span>
+                                {child.desc && (
+                                  <span className="navbar-dropdown-desc">{child.desc}</span>
+                                )}
+                              </div>
+                            </NavLink>
+                          ))}
+                        </div>
                       </div>
-                    )}
-                  </>
-                ) : (
-                  <NavLink to={item.path} className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
-                    {item.label}
-                  </NavLink>
-                )}
-              </li>
-            ))}
+                    </div>
+                  ) : (
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}
+                    >
+                      <span>{item.label}</span>
+                    </NavLink>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
-          {/* CTA */}
-          <Link to="/contact" className="btn btn-primary navbar-cta">
-            Get a Quote
-          </Link>
+          {/* CTA & Hamburger */}
+          <div className="navbar-right">
+            <Link to="/contact" className="btn btn-primary navbar-cta">
+              <span>Get a Quote</span>
+            </Link>
 
-          {/* Hamburger */}
-          <button className="navbar-hamburger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <button
+              className="navbar-hamburger"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle Navigation"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileOpen && (
           <div className="navbar-mobile">
-            {navItems.map((item) => (
-              <div key={item.label} className="navbar-mobile-item">
-                <NavLink to={item.path} className="navbar-mobile-link">
-                  {item.label}
-                </NavLink>
-                {item.children && (
-                  <div className="navbar-mobile-sub">
-                    {item.children.map((child) => (
-                      <NavLink key={child.path} to={child.path} className="navbar-mobile-sublink">
-                        {child.label}
+            <div className="navbar-mobile-inner">
+              {navItems.map((item) => {
+                const hasChildren = Boolean(item.children);
+                const isExpanded = expandedMobile[item.label];
+
+                return (
+                  <div key={item.label} className="navbar-mobile-item">
+                    <div className="navbar-mobile-header">
+                      <NavLink
+                        to={item.path}
+                        className="navbar-mobile-link"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
                       </NavLink>
-                    ))}
+
+                      {hasChildren && (
+                        <button
+                          className={`navbar-mobile-toggle ${isExpanded ? 'expanded' : ''}`}
+                          onClick={(e) => toggleMobileSub(item.label, e)}
+                          aria-label={`Toggle ${item.label} sub-menu`}
+                        >
+                          <ChevronDown size={18} />
+                        </button>
+                      )}
+                    </div>
+
+                    {hasChildren && isExpanded && (
+                      <div className="navbar-mobile-sub">
+                        {item.children.map((child) => (
+                          <NavLink
+                            key={child.path}
+                            to={child.path}
+                            className="navbar-mobile-sublink"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            <span className="sublink-title">{child.label}</span>
+                            {child.desc && (
+                              <span className="sublink-desc">{child.desc}</span>
+                            )}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
+                );
+              })}
+
+              <div className="navbar-mobile-cta">
+                <Link
+                  to="/contact"
+                  className="btn btn-primary"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <span>Get a Quote</span>
+                </Link>
               </div>
-            ))}
-            <Link to="/contact" className="btn btn-primary" style={{ marginTop: '16px', width: '100%', justifyContent: 'center' }}>
-              Get a Quote
-            </Link>
+            </div>
           </div>
         )}
       </nav>
-    </>
+    </header>
   );
 }

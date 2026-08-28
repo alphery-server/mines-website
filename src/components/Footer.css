@@ -33,6 +33,13 @@
   margin-bottom: 20px;
 }
 
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .footer-logo-name {
   font-family: var(--font-heading);
   font-size: 1.05rem;

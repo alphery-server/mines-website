@@ -112,23 +112,7 @@ export default function Navbar() {
         <div className="container navbar-inner">
           {/* Logo */}
           <Link to="/" className="navbar-logo">
-            <div className="navbar-logo-icon">
-              <svg width="100%" height="100%" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="10" fill="url(#nLogoGrad)" />
-                <path d="M18 7L29 27H7L18 7Z" fill="rgba(255,255,255,0.92)" />
-                <circle cx="18" cy="19.5" r="4.5" fill="url(#nLogoGrad2)" />
-                <defs>
-                  <linearGradient id="nLogoGrad" x1="0" y1="0" x2="36" y2="36">
-                    <stop offset="0%" stopColor="#F5A623" />
-                    <stop offset="100%" stopColor="#FF6B35" />
-                  </linearGradient>
-                  <linearGradient id="nLogoGrad2" x1="13" y1="15" x2="23" y2="25">
-                    <stop offset="0%" stopColor="#1A0A00" />
-                    <stop offset="100%" stopColor="#3D1F00" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <img src="/noroot.png" alt="Vasantharagam Mines & Minerals" className="navbar-logo-img" />
             <div className="navbar-logo-text">
               <span className="navbar-logo-name">Vasantharagam</span>
               <span className="navbar-logo-sub">Mines & Minerals</span>

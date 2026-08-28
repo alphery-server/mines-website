@@ -41,21 +41,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="8" fill="url(#fLogoGrad)" />
-                <path d="M18 6L30 28H6L18 6Z" fill="white" opacity="0.9" />
-                <circle cx="18" cy="20" r="5" fill="url(#fLogoGrad2)" />
-                <defs>
-                  <linearGradient id="fLogoGrad" x1="0" y1="0" x2="36" y2="36">
-                    <stop offset="0%" stopColor="#C17D47" />
-                    <stop offset="100%" stopColor="#6B3F1F" />
-                  </linearGradient>
-                  <linearGradient id="fLogoGrad2" x1="13" y1="15" x2="23" y2="25">
-                    <stop offset="0%" stopColor="#F5F0E8" />
-                    <stop offset="100%" stopColor="#D4B896" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="/noroot.png" alt="Vasantharagam Mines & Minerals Logo" className="footer-logo-img" />
               <div>
                 <div className="footer-logo-name">Vasantharagam</div>
                 <div className="footer-logo-sub">Mines & Minerals</div>

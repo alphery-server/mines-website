@@ -142,7 +142,7 @@ export default function About() {
             {[
               { name: 'S. Ramesh', role: 'Founder & Director', initials: 'SR', image: '/s_ramesh.png', imgPos: 'center top', bio: 'Visionary co-founder driving strategic direction, business growth, and long-term corporate governance for Vasantharagam Mines & Minerals.' },
               { name: 'S. Viswanathan', role: 'Founder & Director', initials: 'SV', image: '/s_viswanathan.png', imgPos: 'center top', bio: 'Co-founder instrumental in establishing core operational foundations, quality benchmarks, and guiding sustainable business development.' },
-              { name: 'S. R. Dharanidharan', role: 'CEO', initials: 'SD', bio: 'Chief Executive Officer leading strategic expansion, commercial growth, B2B partnerships, and overall corporate execution across India.' },
+              { name: 'S. R. Dharanidharan', role: 'CEO', initials: 'SD', image: '/s_r_dharanidharan.png', imgPos: 'center top', bio: 'Chief Executive Officer leading strategic expansion, commercial growth, B2B partnerships, and overall corporate execution across India.' },
               { name: 'S. R. Dhayal', role: 'COO / Head of Operations', initials: 'SD', image: '/s_r_dhayal.png', imgPos: 'center top', bio: 'Chief Operating Officer managing end-to-end quarry extraction, advanced crushing technology, quality assurance, and fleet logistics.' },
             ].map((leader, i) => (
               <div key={i} className="leader-card">

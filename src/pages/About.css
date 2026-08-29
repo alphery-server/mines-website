@@ -220,15 +220,16 @@
 }
 
 .leader-card {
-  background: rgba(14, 18, 28, 0.75);
+  background: #0e121c;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-  backdrop-filter: blur(20px);
   position: relative;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .leader-card:hover {
@@ -242,7 +243,7 @@
   height: 320px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(28, 36, 54, 0.5) 0%, rgba(12, 16, 26, 0.95) 100%);
+  background: #0e121c;
 }
 
 .leader-img {
@@ -252,6 +253,7 @@
   object-position: top center;
   display: block;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
 }
 
 .leader-card:hover .leader-img {
@@ -261,7 +263,7 @@
 .leader-image-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(14, 18, 28, 1) 0%, rgba(14, 18, 28, 0.4) 35%, transparent 75%);
+  background: linear-gradient(to top, #0e121c 0%, rgba(14, 18, 28, 0.4) 40%, transparent 80%);
   pointer-events: none;
 }
 
@@ -271,7 +273,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 40%, rgba(245, 166, 35, 0.14) 0%, rgba(14, 18, 28, 0.95) 75%);
+  background: radial-gradient(circle at 50% 40%, rgba(245, 166, 35, 0.14) 0%, #0e121c 75%);
   position: relative;
 }
 
@@ -306,14 +308,14 @@
 }
 
 .leader-info {
-  padding: 16px 22px 28px;
+  padding: 20px 22px 28px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   text-align: center;
   position: relative;
   z-index: 2;
-  margin-top: -24px;
+  background: #0e121c;
 }
 
 .leader-info h4 {

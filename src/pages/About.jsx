@@ -140,18 +140,35 @@ export default function About() {
           </div>
           <div className="leadership-grid">
             {[
-              { name: 'S. Ramesh', role: 'Founder & Director', initials: 'SR', bio: 'Visionary co-founder driving strategic direction, business growth, and long-term corporate governance for Vasantharagam Mines & Minerals.' },
-              { name: 'S. Viswanathan', role: 'Founder & Director', initials: 'SV', bio: 'Co-founder instrumental in establishing core operational foundations, quality benchmarks, and guiding sustainable business development.' },
+              { name: 'S. Ramesh', role: 'Founder & Director', initials: 'SR', image: '/s_ramesh.png', imgPos: 'top center', bio: 'Visionary co-founder driving strategic direction, business growth, and long-term corporate governance for Vasantharagam Mines & Minerals.' },
+              { name: 'S. Viswanathan', role: 'Founder & Director', initials: 'SV', image: '/s_viswanathan.png', imgPos: 'top center', bio: 'Co-founder instrumental in establishing core operational foundations, quality benchmarks, and guiding sustainable business development.' },
               { name: 'S. R. Dharanidharan', role: 'CEO', initials: 'SD', bio: 'Chief Executive Officer leading strategic expansion, commercial growth, B2B partnerships, and overall corporate execution across India.' },
-              { name: 'S. R. Dhayal', role: 'COO / Head of Operations', initials: 'SD', bio: 'Chief Operating Officer managing end-to-end quarry extraction, advanced crushing technology, quality assurance, and fleet logistics.' },
+              { name: 'S. R. Dhayal', role: 'COO / Head of Operations', initials: 'SD', image: '/s_r_dhayal.png', imgPos: 'top center', bio: 'Chief Operating Officer managing end-to-end quarry extraction, advanced crushing technology, quality assurance, and fleet logistics.' },
             ].map((leader, i) => (
               <div key={i} className="leader-card">
-                <div className="leader-avatar">
-                  <span>{leader.initials || leader.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
+                <div className="leader-image-wrap">
+                  {leader.image ? (
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="leader-img"
+                      style={{ objectPosition: leader.imgPos || 'center top' }}
+                    />
+                  ) : (
+                    <div className="leader-placeholder">
+                      <div className="placeholder-emblem">
+                        <span>{leader.initials || leader.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>
+                      </div>
+                      <div className="placeholder-pattern" />
+                    </div>
+                  )}
+                  <div className="leader-image-gradient" />
                 </div>
                 <div className="leader-info">
                   <h4>{leader.name}</h4>
-                  <div className="leader-role">{leader.role}</div>
+                  <div className="leader-role">
+                    <span className="leader-role-tag">{leader.role}</span>
+                  </div>
                   <p>{leader.bio}</p>
                 </div>
               </div>

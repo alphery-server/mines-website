@@ -396,8 +396,15 @@
   .about-cta { padding: 60px 0; }
 }
 
+.leadership-section {
+  padding: var(--section-padding);
+  background: var(--color-bg);
+  scroll-margin-top: 100px;
+}
+
 @media (max-width: 600px) {
-  .leadership-grid { grid-template-columns: 1fr; gap: 14px; }
+  .leadership-grid { grid-template-columns: 1fr; gap: 18px; }
+  .leader-image-wrap { height: 350px; }
   .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .about-ov-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
   .value-card { padding: 22px 14px; }
@@ -406,7 +413,8 @@
 }
 
 @media (max-width: 480px) {
-  .leadership-grid { grid-template-columns: 1fr; gap: 12px; }
+  .leadership-grid { grid-template-columns: 1fr; gap: 16px; }
+  .leader-image-wrap { height: 340px; }
   .values-grid { grid-template-columns: 1fr; gap: 10px; }
   .about-ov-highlights { grid-template-columns: 1fr; gap: 10px; }
   .timeline-item { margin-bottom: 28px; }
@@ -414,7 +422,6 @@
   .timeline-year { font-size: 1.2rem; }
   .timeline-content h3 { font-size: 0.9rem; }
   .vm-card { padding: 22px 16px; }
-  .leader-image-wrap { height: 260px; }
 }
 
 @media (max-width: 375px) {

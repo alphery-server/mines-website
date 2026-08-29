@@ -403,8 +403,9 @@
 }
 
 @media (max-width: 600px) {
-  .leadership-grid { grid-template-columns: 1fr; gap: 18px; }
-  .leader-image-wrap { height: 350px; }
+  .leadership-grid { grid-template-columns: 1fr; gap: 20px; }
+  .leader-image-wrap { height: 420px; }
+  .leader-img { object-fit: contain; object-position: center top; }
   .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .about-ov-highlights { grid-template-columns: 1fr 1fr; gap: 10px; }
   .value-card { padding: 22px 14px; }
@@ -413,8 +414,9 @@
 }
 
 @media (max-width: 480px) {
-  .leadership-grid { grid-template-columns: 1fr; gap: 16px; }
-  .leader-image-wrap { height: 340px; }
+  .leadership-grid { grid-template-columns: 1fr; gap: 18px; }
+  .leader-image-wrap { height: 390px; }
+  .leader-img { object-fit: contain; object-position: center top; }
   .values-grid { grid-template-columns: 1fr; gap: 10px; }
   .about-ov-highlights { grid-template-columns: 1fr; gap: 10px; }
   .timeline-item { margin-bottom: 28px; }
